@@ -25,4 +25,5 @@ runs:
         repo: github.com/k1LoW/tbls
         github-token: ${{ inputs.github-token }}
         version: ${{ inputs.version }}
+        bin-match: tbls
         force: ${{ inputs.force }}

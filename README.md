@@ -7,14 +7,13 @@ GitHub Action for [tbls](https://github.com/k1LoW/tbls)
 And set up a workflow file as follows and run tbls on GitHub Actions.
 
 ``` yaml
-# .github/workflows/ci.yml
+# .github/workflows/doc.yml
 name: Document
 
 on:
   push:
     branches:
       - main
-  pull_request:
 
 jobs:
   doc:
