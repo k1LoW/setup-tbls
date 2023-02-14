@@ -23,7 +23,7 @@ jobs:
       -
         uses: actions/checkout@v3
       -
-        uses: k1low/setup-tbls@main
+        uses: k1low/setup-tbls@v1
       -
         name: Run tbls for generate documdnt
         run: tbls doc
