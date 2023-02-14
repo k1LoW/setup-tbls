@@ -1,0 +1,25 @@
+name: Test
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  test-setup:
+    name: Setup test
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    env:
+      DEBUG: true
+    steps:
+      -
+        uses: actions/checkout@v3
+      -
+        uses: ./
+      -
+        name: Run tbls
+        run: tbls version
