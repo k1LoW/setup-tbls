@@ -20,10 +20,11 @@ runs:
   using: 'composite'
   steps:
     -
-      uses: k1LoW/gh-setup@v0
+      uses: k1LoW/gh-setup@v1
       with:
         repo: github.com/k1LoW/tbls
         github-token: ${{ inputs.github-token }}
         version: ${{ inputs.version }}
         bin-match: tbls
+        strict: true
         force: ${{ inputs.force }}
