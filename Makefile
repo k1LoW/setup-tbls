@@ -1,5 +1,5 @@
 prerelease:
-	git pull origin main --tag
+	git pull origin main --tag -f
 	ghch -w -N ${VER}
 	git add CHANGELOG.md
 	git commit -m'Bump up version number'

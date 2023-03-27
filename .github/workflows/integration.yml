@@ -1,0 +1,20 @@
+name: Integration
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test-setup:
+    name: Setup test
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    env:
+      DEBUG: true
+    steps:
+      -
+        uses: k1LoW/setup-tbls@v1
+      -
+        name: Run tbls
+        run: tbls version
