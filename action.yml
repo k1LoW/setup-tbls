@@ -20,6 +20,19 @@ runs:
   using: 'composite'
   steps:
     -
+      id: set-path
+      shell: bash
+      run: echo "path=$HOME/.tbls/bin" >> $GITHUB_OUTPUT
+    -
+      shell: bash
+      run: |
+        mkdir -p ${{ steps.set-path.outputs.path }}
+        if [[ "$RUNNER_OS" == "Linux" || "$RUNNER_OS" == "macOS" ]]; then
+          echo "${{ steps.set-path.outputs.path }}" >> $GITHUB_PATH
+        elif [[ "$RUNNER_OS" == "Windows" ]]; then
+          echo $(cygpath -w "${{ steps.set-path.outputs.path }}") >> $GITHUB_PATH
+        fi
+    -
       uses: k1LoW/gh-setup@v1
       with:
         repo: github.com/k1LoW/tbls
@@ -28,3 +41,4 @@ runs:
         bin-match: tbls
         strict: true
         force: ${{ inputs.force }}
+        bin-dir: ${{ steps.set-path.outputs.path }}
