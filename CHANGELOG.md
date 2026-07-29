@@ -1,5 +1,9 @@
 # Changelog
 
+## [v1.4.1](https://github.com/k1LoW/setup-tbls/compare/v1.4.0...v1.4.1) (2026-07-29)
+
+* Update gh-setup action version to v1.11.9 [#4](https://github.com/k1LoW/setup-tbls/pull/4) ([xuwei-k](https://github.com/xuwei-k))
+
 ## [v1.3.0](https://github.com/k1LoW/setup-tbls/compare/v1.2.0...v1.3.0) (2024-11-04)
 
 * Specify the installation path [#2](https://github.com/k1LoW/setup-tbls/pull/2) ([kazufusa](https://github.com/kazufusa))
