@@ -1,0 +1,13 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/suzuki-shunsuke/pinact/refs/heads/main/json-schema/pinact.json
+# pinact - https://github.com/suzuki-shunsuke/pinact
+version: 3
+
+# No "files" section here. Default discovery already covers
+# .github/workflows/*.y[a]ml and action.y[a]ml, and spelling the patterns out
+# the way k1LoW/octocov-action does makes pinact v4 match no file at all.
+ignore_actions:
+# Self-reference. The integration workflow exists to verify that the floating
+# v1 tag published to consumers actually works, so pinning it to a commit would
+# stop testing what `uses: k1LoW/setup-tbls@v1` resolves to.
+- name: k1LoW/setup-tbls
+  ref: .*
